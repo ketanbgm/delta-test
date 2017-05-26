@@ -1,0 +1,21 @@
+$height: 150px;
+$offset: 50px;
+
+.bar-chart-widget-2 {
+  position: relative;
+  height: $height;
+  overflow: hidden;
+
+  .text-widget-1 {
+    z-index: 1;
+  }
+
+  .ct-chart {
+    position: absolute;
+    top: $offset;
+    left: 0;
+    height: $height - $offset;
+    z-index: 2;
+    opacity: 0.1;
+  }
+}

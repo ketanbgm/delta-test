@@ -1,0 +1,27 @@
+@import "../variables";
+
+.donut-chart-widget-1 {
+  text-align: center;
+
+  .easy-pie-chart {
+    margin: 20px auto;
+  }
+
+  h3 {
+    font-size: 15px;
+  }
+
+  h4 {
+    font-size: 24px;
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .donut-chart-widget-1 {
+      background-color: map-get($value, "background-color");
+      border-color: map-get($value, "border-color");
+      color: map-get($value, "color");
+    }
+  }
+}

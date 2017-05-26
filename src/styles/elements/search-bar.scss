@@ -1,0 +1,29 @@
+@import "../variables";
+@import "../mixins";
+
+.show-from-top {
+  transform: translate3d(0, $navbar-height + 10, 0);
+}
+
+.navbar-search {
+  position: fixed;
+  top: -$navbar-height - 10;
+  left: 0;
+  width: 100%;
+  display: flex;
+  height: $navbar-height;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  z-index: $zindex-navbar-fixed + 3;
+  transition: transform 0.35s ease-in-out;
+  background: #fff;
+
+  @include box-shadow;
+
+  form {
+    width: calc(100% - 60px);
+    margin: 15px 0;
+  }
+}

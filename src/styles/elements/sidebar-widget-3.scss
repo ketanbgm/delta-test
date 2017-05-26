@@ -1,0 +1,14 @@
+@import "../variables";
+@import "../mixins";
+
+.sidebar-widget-3 {
+  [data-collapsed="true"] & {
+  }
+}
+
+@each $key, $value in $default-palette {
+  .sidebar-widget-3 {
+    background: map-get($value, "background-color");
+    color: map-get($value, "color");
+  }
+}

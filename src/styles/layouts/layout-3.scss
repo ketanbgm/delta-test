@@ -1,0 +1,139 @@
+@import "../variables";
+@import "../mixins";
+$jumbotron-height: 90px;
+
+[data-layout="layout-3"] {
+  .navbar {
+    z-index: $zindex-navbar-fixed + 1;
+    width: calc(100% - $left-sidebar-width);
+    position: fixed;
+    top: 0;
+    left: $left-sidebar-width;
+    right: 0;
+
+    //transition: width 0.3s ease;
+    //		.toggle-layout {
+    //			margin-left: $side-margin;
+    //			i {
+    //				transition: transform 0.3s ease;
+    //				transform: rotate(540deg);
+    //			}
+    //		}
+  }
+
+  &[data-collapsed="true"] {
+    .navbar {
+      left: $left-sidebar-collapsed-width;
+      width: calc(100% - $left-sidebar-collapsed-width);
+
+      //			.toggle-layout {
+      //				i {
+      //					transform: rotate(0deg);
+      //				}
+      //			}
+    }
+  }
+
+  .main {
+    padding-left: $left-sidebar-width + $side-margin;
+    padding-right: $side-margin;
+
+    //padding-top: $side-margin;
+    //transition: padding-left 0.3s ease;
+
+    .jumbotron {
+      //height: $jumbotron-height;
+      width: 100%;
+      margin-top: $navbar-height + $side-margin;
+      margin-bottom: $side-margin;
+
+      //transition: width 0.3s ease;
+    }
+
+    .page {
+      > .row {
+        margin-bottom: $side-margin;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &[data-collapsed="true"] {
+    .main {
+      padding-left: $side-margin + $left-sidebar-collapsed-width;
+    }
+  }
+
+  .left-sidebar-placeholder {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: calc(100%);
+    width: $left-sidebar-width;
+    z-index: $zindex-navbar-fixed + 2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    //@include box-shadow();
+  }
+
+  &[data-collapsed="true"] {
+    .left-sidebar-placeholder {
+      width: $left-sidebar-collapsed-width;
+    }
+  }
+
+  .left-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: calc(100%);
+    width: $left-sidebar-width;
+    overflow: hidden;
+    z-index: $zindex-navbar-fixed + 2;
+
+    //transition: width 0.1s ease;
+
+    .wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      height: calc(100%);
+      overflow: auto;
+      width: $left-sidebar-width + $side-margin;
+
+      .content {
+        width: $left-sidebar-width;
+      }
+    }
+  }
+
+  &[data-collapsed="true"] {
+    .left-sidebar {
+      width: $left-sidebar-collapsed-width;
+      transition: width 0.3s ease;
+
+      &:hover {
+        width: $left-sidebar-width;
+
+        .collapse.show {
+          display: block;
+        }
+
+        .left-sidebar-section {
+          ul {
+            li {
+              .btn-sidebar {
+                span {
+                  opacity: 1 !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

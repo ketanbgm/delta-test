@@ -1,0 +1,30 @@
+@import "../variables";
+@import "../palettes";
+$height: 150px;
+$offset: 50px;
+
+.area-chart-widget-1 {
+  position: relative;
+  height: $height;
+  overflow: hidden;
+
+  .text-widget-1 {
+    z-index: 2;
+  }
+
+  .ct-chart {
+    position: absolute;
+    top: $offset;
+    left: 0;
+    height: $height - $offset;
+    z-index: 1;
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .area-chart-widget-1 {
+      color: map-get($value, "color");
+    }
+  }
+}

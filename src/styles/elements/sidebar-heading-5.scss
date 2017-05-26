@@ -1,0 +1,34 @@
+@import "../variables";
+@import "../mixins";
+@import "sidebar-heading";
+
+.sidebar-heading {
+  &.sidebar-heading-5 {
+    .logo {
+    }
+
+    .search-form {
+      display: none;
+    }
+
+    .sidebar-heading-image {
+      display: none;
+    }
+
+    .dropdown {
+      display: none;
+    }
+
+    .icons {
+      display: none;
+    }
+
+    .text-blocks {
+      display: none;
+    }
+
+    .buttons {
+      display: none;
+    }
+  }
+}

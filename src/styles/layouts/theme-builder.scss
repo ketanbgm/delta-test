@@ -1,0 +1,67 @@
+@import "../variables";
+@import "../mixins";
+@import "../palettes";
+$theme-builder-sidebar-1: 80px;
+$theme-builder-sidebar-2: 240px;
+
+[data-layout="theme-builder"] {
+  .main {
+    padding-left: $theme-builder-sidebar-1 + $theme-builder-sidebar-2 + $side-margin;
+    padding-right: $side-margin;
+    padding-top: $side-margin;
+
+    > .row {
+      margin-bottom: $side-margin;
+    }
+  }
+
+  .theme-builder-sidebar-1 {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: calc(100%);
+    width: $theme-builder-sidebar-1;
+    overflow: hidden;
+    z-index: $zindex-navbar-fixed + 2;
+
+    .wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      height: calc(100%);
+      overflow: auto;
+      width: $theme-builder-sidebar-1 + $side-margin;
+
+      .content {
+        width: $theme-builder-sidebar-1;
+      }
+    }
+  }
+
+  .theme-builder-sidebar-2 {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: $theme-builder-sidebar-1;
+    height: calc(100%);
+    width: $theme-builder-sidebar-2;
+    overflow: hidden;
+    z-index: $zindex-navbar-fixed + 3;
+
+    .wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      height: calc(100%);
+      overflow: auto;
+      width: $theme-builder-sidebar-2 + $side-margin;
+
+      .content {
+        width: $theme-builder-sidebar-2;
+      }
+    }
+  }
+}

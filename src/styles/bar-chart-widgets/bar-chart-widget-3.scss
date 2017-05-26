@@ -1,0 +1,10 @@
+$height: 150px;
+
+.bar-chart-widget-3 {
+  position: relative;
+  height: $height;
+
+  .ct-chart {
+    height: $height;
+  }
+}

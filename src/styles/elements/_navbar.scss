@@ -1,0 +1,49 @@
+@import "../variables";
+
+.navbar {
+  display: flex;
+  height: $navbar-height;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .logo {
+    padding-left: 10px;
+    padding-right: $side-margin;
+  }
+
+  .nav {
+    .nav-item {
+      .nav-link {
+        padding-left: $side-margin;
+        padding-right: $side-margin;
+      }
+    }
+  }
+
+  .dropdown {
+    &.show {
+      .dropdown-menu {
+        margin-top: 0;
+        top: 53px;
+      }
+    }
+  }
+
+  .navbar-search-form {
+    flex: 0 0 250px;
+    margin-left: 10px;
+    margin-right: $side-margin;
+
+    .input-group-addon {
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+    }
+
+    input {
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+  }
+}

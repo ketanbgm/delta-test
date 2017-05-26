@@ -1,0 +1,51 @@
+@import "../variables";
+
+.show-from-right {
+  transform: translate3d(-$right-sidebar-width, 0, 0);
+}
+
+.right-sidebar-outer {
+  transition: transform 0.25s ease;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: $right-sidebar-width;
+  height: 100%;
+  left: 100%;
+  display: block;
+  overflow: hidden;
+  z-index: $zindex-navbar-fixed + 5;
+
+  .right-sidebar-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: auto;
+    width: $right-sidebar-width + 20;
+  }
+
+  .right-sidebar {
+    width: $right-sidebar-width;
+    text-align: center;
+
+    h4 {
+      font-size: 16px;
+      margin: 20px;
+    }
+
+    .tab-content {
+      text-align: left;
+      padding: 10px;
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .right-sidebar-outer {
+      background: map-get($value, "background-color");
+      color: map-get($value, "color");
+    }
+  }
+}

@@ -1,0 +1,24 @@
+[data-layout="empty-view-3"] {
+  position: relative;
+  -ms-overflow-style: none;
+  overflow-x: hidden;
+
+  ::-webkit-scrollbar {
+    display: none;
+    width: 0 !important;
+  }
+
+  .container-fluid {
+    display: flex;
+    height: calc(100%);
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  html & {
+    background: url(/assets/images/empty-view-3.jpg) no-repeat center center fixed;
+    background-size: cover;
+  }
+}

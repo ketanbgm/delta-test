@@ -1,0 +1,73 @@
+@import "../variables";
+@import "../mixins";
+
+.jumbotron {
+  &.jumbotron-3 {
+
+    //background: url(/assets/images/empty-view-1.jpg) no-repeat center center fixed;
+    //background-size: cover;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    h4 {
+      padding: 55px $side-margin 0 $side-margin;
+      @include font-size(22px);
+    }
+
+    .breadcrumb {
+      padding: 0;
+      margin: 0;
+    }
+
+    .btn {
+      float: right;
+      margin-right: $side-margin;
+      margin-top: $side-margin * 3;
+
+      &:hover,
+      &:active,
+      &:focus {
+      }
+
+      @media (max-width: 543px) {
+        display: none;
+      }
+
+      @media (min-width: 544px) and (max-width: 767px) {
+        display: none;
+      }
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .jumbotron {
+      &.jumbotron-3 {
+        //background-color: map-get($value, "background-color");
+        //border-color: map-get($value, "border-color");
+        color: map-get($value, "color");
+
+        .breadcrumb {
+          color: map-get($value, "color");
+
+          li,
+          a {
+            color: map-get($value, "color");
+          }
+
+          &.large-icon-home {
+            > li:first-child {
+              &:before {
+                font-weight: 700;
+                color: map-get($value, "highlight-color");
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

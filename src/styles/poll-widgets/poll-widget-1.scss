@@ -1,0 +1,78 @@
+@import "../variables";
+@import "../palettes";
+
+.poll-widget-1 {
+  font-size: 14px;
+
+  td {
+    width: auto;
+  }
+
+  td:nth-child(1) {
+    width: 140px;
+  }
+
+  td:nth-child(3) {
+    width: 60px;
+    text-align: right;
+  }
+}
+
+/*
+    width: 100%;
+    position: relative;
+    .table > tbody > tr {
+        border: none;
+		height: 25px;
+		line-height: 25px;
+    }
+    .table > tbody > tr > td {
+        border: none;
+		height: 25px;
+		line-height: 25px;
+        padding: 0 5px;
+        text-align: right;
+        vertical-align: middle;
+        .progress {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    td:nth-child(1) {
+        text-align: left;
+        width: 150px;
+        padding: 0 20px 0 0;
+        white-space: nowrap;
+        font-size: 14px;
+    }
+    td:nth-child(2) {
+        text-align: left;
+        padding: 0;
+        .progress {
+            margin-top: 0px;
+        }
+    }
+    td:nth-child(3) {
+        text-align: right;
+        padding: 0 0 0 20px;
+        width: 30px;
+        font-size: 13px;
+    }
+    [data-direction="rtl"] & {
+        td {
+            text-align: left;
+        }
+        td:nth-child(1) {
+            text-align: right;
+            padding: 0 0 0 20px;
+        }
+        td:nth-child(2) {
+            text-align: right;
+        }
+        td:nth-child(3) {
+            text-align: left;
+            padding: 0 20px 0 0;
+        }
+    }
+}
+*/

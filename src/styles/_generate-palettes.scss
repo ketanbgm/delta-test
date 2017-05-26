@@ -1,0 +1,10 @@
+@import "colors";
+@import "palettes";
+
+@each $key, $value in $default-palette {
+	#{$key} {
+		@each $k, $v in map-keys($value) {
+      #{$k}: map-get($value, $k);
+		}
+	}
+}

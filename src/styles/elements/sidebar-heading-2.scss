@@ -1,0 +1,96 @@
+@import "../variables";
+@import "../mixins";
+@import "sidebar-heading";
+
+.sidebar-heading {
+  &.sidebar-heading-2 {
+    .logo {
+      display: none;
+    }
+
+    .search-form {
+      display: none;
+    }
+
+    &:before {
+      z-index: -1;
+      position: absolute;
+      content: "";
+      display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: $navbar-height;
+      width: 100%;
+    }
+
+    &:after {
+      z-index: -1;
+      background-image: url(/assets/images/bg1.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: absolute;
+      content: "";
+      display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: $navbar-height;
+      width: 100%;
+    }
+
+    .sidebar-heading-image {
+      min-height: 105px;
+
+      [data-collapsed="true"] & {
+        //margin-bottom: 0;
+      }
+
+      .rounded-circle {
+        margin-top: 30px;
+        margin-left: -10px;
+
+        [data-collapsed="true"] & {
+          margin-top: 40px;
+          //margin-top: 5px;
+        }
+      }
+
+      .badge {
+        top: 30px;
+
+        [data-collapsed="true"] & {
+          top: 32px;
+          left: calc(50%);
+        }
+      }
+    }
+
+    .text-blocks {
+      //display: none;
+    }
+
+    .icons,
+    .buttons {
+      display: none;
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-sidebar="#{$key}"] {
+    .sidebar-heading {
+      &.sidebar-heading-2 {
+        &:before {
+          background: map-get($value, "highlight-color");
+        }
+
+        &:after {
+          opacity: 0.15;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@import "../variables";
+@import "../mixins";
+@import "sidebar-heading";
+
+.sidebar-heading {
+  &.sidebar-heading-4 {
+    .logo {
+      margin-bottom: $side-margin;
+
+      [data-collapsed="true"] & {
+        margin-bottom: 0;
+      }
+    }
+
+    .search-form {
+      display: none;
+    }
+
+    .sidebar-heading-image {
+      [data-collapsed="true"] & {
+        display: none;
+      }
+    }
+
+    .dropdown {
+      .dropdown-toggle {
+        .description {
+          display: none;
+        }
+      }
+    }
+
+    .icons {
+      display: none;
+    }
+
+    .text-blocks {
+      font-size: 0.85rem;
+
+      .value {
+        font-weight: 700;
+      }
+    }
+
+    .buttons {
+      display: none;
+    }
+  }
+}

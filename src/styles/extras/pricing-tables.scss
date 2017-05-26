@@ -1,0 +1,324 @@
+@import "../variables";
+@import "../mixins";
+
+// Extra small devices (portrait phones, less than 544px)
+@media (max-width: 543px) {
+  .pricing-table-1 {
+    .text-center {
+      padding: 0;
+    }
+
+    .inner {
+      background: #fff;
+    }
+
+    .header {
+      padding: 20px;
+      color: #fff;
+    }
+
+    .table,
+    td,
+    tr,
+    th,
+    td {
+      border: none;
+      border-top: none;
+      border-bottom: none;
+      margin: 0;
+      background: #fff;
+    }
+
+    h3 {
+      font-size: 22px;
+    }
+
+    h1 {
+      font-size: 48px;
+    }
+
+    td {
+      i {
+        margin-right: 10px;
+      }
+    }
+
+    .t1,
+    .t2,
+    .t3 {
+      background: #fff;
+
+      @include box-shadow;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+
+    .text-xs {
+      font-size: 20px;
+    }
+  }
+}
+
+// Small devices (landscape phones, 544px and up)
+@media (min-width: 544px) and (max-width: 767px) {
+  .pricing-table-1 {
+    .text-center {
+      padding: 0;
+    }
+
+    .inner {
+      background: #fff;
+    }
+
+    .header {
+      padding: 20px;
+      color: #fff;
+    }
+
+    .table,
+    td,
+    tr,
+    th,
+    td {
+      border: none;
+      border-top: none;
+      border-bottom: none;
+      margin: 0;
+      background: #fff;
+    }
+
+    h3 {
+      font-size: 22px;
+    }
+
+    h1 {
+      font-size: 48px;
+    }
+
+    td {
+      i {
+        margin-right: 10px;
+      }
+    }
+
+    .t1,
+    .t2,
+    .t3 {
+      background: #fff;
+
+      @include box-shadow;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+
+    .text-xs {
+      font-size: 20px;
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991px) {
+  .pricing-table-1 {
+    .text-center {
+      padding: 0;
+    }
+
+    .inner {
+      background: #fff;
+    }
+
+    .header {
+      padding: 20px;
+      color: #fff;
+    }
+
+    .table,
+    td,
+    tr,
+    th,
+    td {
+      border: none;
+      border-top: none;
+      border-bottom: none;
+      margin: 0;
+      background: #fff;
+    }
+
+    h3 {
+      font-size: 22px;
+    }
+
+    h1 {
+      font-size: 48px;
+    }
+
+    td {
+      i {
+        margin-right: 10px;
+      }
+    }
+
+    .t1,
+    .t2,
+    .t3 {
+      background: #fff;
+
+      @include box-shadow;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+
+    .text-xs {
+      font-size: 20px;
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199px) {
+  .pricing-table-1 {
+    padding: 10px 20px;
+
+    .text-center {
+      padding: 0;
+    }
+
+    .inner {
+      background: #fff;
+    }
+
+    .header {
+      padding: 20px;
+      color: #fff;
+    }
+
+    .table,
+    td,
+    tr,
+    th,
+    td {
+      border: none;
+      border-top: none;
+      border-bottom: none;
+      margin: 0;
+      background: #fff;
+    }
+
+    h3 {
+      font-size: 22px;
+    }
+
+    h1 {
+      font-size: 48px;
+    }
+
+    td {
+      i {
+        margin-right: 10px;
+      }
+    }
+
+    .t1,
+    .t2,
+    .t3 {
+      background: #fff;
+
+      @include box-shadow;
+      padding-bottom: 20px;
+    }
+
+    .t1,
+    .t3 {
+      transform: scale(1);
+      z-index: 1;
+    }
+
+    .t2 {
+      transform: perspective(1px) scale(1.1);
+      -webkit-font-smoothing: antialiased;
+      -webkit-perspective: 1000;
+      -webkit-filter: blur(0);
+      -webkit-filter: blur(0);
+      z-index: 2;
+    }
+
+    .text-xs {
+      font-size: 20px;
+    }
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .pricing-table-1 {
+    padding: 20px 40px;
+
+    .text-center {
+      padding: 0;
+    }
+
+    .inner {
+      background: #fff;
+    }
+
+    .header {
+      padding: 20px;
+      color: #fff;
+    }
+
+    .table,
+    td,
+    tr,
+    th,
+    td {
+      border: none;
+      border-top: none;
+      border-bottom: none;
+      margin: 0;
+      background: #fff;
+    }
+
+    h3 {
+      font-size: 22px;
+    }
+
+    h1 {
+      font-size: 48px;
+    }
+
+    td {
+      i {
+        margin-right: 10px;
+      }
+    }
+
+    .t1,
+    .t2,
+    .t3 {
+      background: #fff;
+
+      @include box-shadow;
+      padding-bottom: 20px;
+    }
+
+    .t1,
+    .t3 {
+      transform: scale(1);
+      z-index: 1;
+    }
+
+    .t2 {
+      transform: perspective(1px) scale(1.1);
+      -webkit-font-smoothing: antialiased;
+      -webkit-perspective: 1000;
+      -webkit-filter: blur(0);
+      -webkit-filter: blur(0);
+      z-index: 2;
+    }
+
+    .text-xs {
+      font-size: 20px;
+    }
+  }
+}

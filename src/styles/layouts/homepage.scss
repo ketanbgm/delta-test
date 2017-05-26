@@ -1,0 +1,49 @@
+@import "../variables";
+@import "../mixins";
+
+$bg-height: 340px;
+
+[data-layout="homepage"] {
+  position: relative;
+  -ms-overflow-style: none;
+  overflow-x: hidden;
+  background: map-get($colors, "grey-100");
+  height: calc(100%);
+
+  ::-webkit-scrollbar {
+    display: none;
+    width: 0 !important;
+  }
+
+  .bg-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: $bg-height;
+    width: calc(100%);
+    display: block;
+    z-index: 1;
+    opacity: 0.9;
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $bg-height;
+    background: url(/assets/images/empty-view-2.jpg) no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.5;
+  }
+
+  .main {
+    z-index: 2;
+    background: none;
+  }
+
+}

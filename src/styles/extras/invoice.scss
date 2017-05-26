@@ -1,0 +1,77 @@
+@import "../variables";
+@import "../mixins";
+
+.invoice {
+  max-width: 800px;
+  margin: 20px auto;
+  background: #fff;
+  color: map-get($colors, "grey-900");
+
+  @include box-shadow;
+
+  h5 {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .address {
+    p {
+      margin-bottom: 5px;
+    }
+  }
+
+  .invoice-title {
+    background: map-get($bootstrap-colors, "primary");
+    color: #fff;
+
+    h3 {
+      display: block;
+    }
+  }
+
+  .table {
+    thead,
+    tbody {
+      tr {
+        td {
+          border: 0;
+        }
+      }
+    }
+  }
+
+  // Extra small devices (portrait phones, less than 544px)
+  @media (max-width: 543px) {
+    .pull-right {
+      float: left !important;
+    }
+
+    .text-right {
+      text-align: left !important;
+    }
+  }
+
+  // Small devices (landscape phones, 544px and up)
+  @media (min-width: 544px) and (max-width: 767px) {
+    .pull-right {
+      float: left !important;
+    }
+
+    .text-right {
+      text-align: left !important;
+    }
+  }
+
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) and (max-width: 991px) {
+  }
+
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) and (max-width: 1199px) {
+  }
+
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+  }
+}

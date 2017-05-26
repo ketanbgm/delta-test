@@ -1,0 +1,28 @@
+@import "../variables";
+@import "../mixins";
+@import "sample-forms";
+$width: 800px;
+$height: 580px;
+$padding: 40px;
+$margin: 20px;
+$left: $width / 3;
+
+.register {
+  &.sample-form-2 {
+    @include sample-form-2($height, $width, $padding, $margin);
+
+    @include box-shadow;
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .register {
+      &.sample-form-2 {
+        background-color: map-get($value, "background-color");
+        border-color: map-get($value, "border-color");
+        color: map-get($value, "color");
+      }
+    }
+  }
+}

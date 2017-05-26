@@ -1,0 +1,29 @@
+@import "../variables";
+
+.checkbox-inline {
+  .checkbox {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+  }
+}
+
+@each $key, $value in $bootstrap-colors {
+  .checkbox-inline.checkbox-#{$key} label input[type="checkbox"]:checked + .checkbox-decorator .check,
+  label.checkbox-inline.checkbox-#{$key} input[type="checkbox"]:checked + .checkbox-decorator .check {
+    color: $value;
+    border-color: $value;
+  }
+
+  .checkbox.checkbox-#{$key} label input[type="checkbox"]:checked + .checkbox-decorator .check,
+  label.checkbox-inline.checkbox-#{$key} input[type="checkbox"]:checked + .checkbox-decorator .check {
+    color: $value;
+    border-color: $value;
+  }
+
+  .checkbox-inline.checkbox-#{$key} label input[type=checkbox]:checked+.checkbox-decorator .check::before,
+  .checkbox.checkbox-#{$key} label input[type=checkbox]:checked+.checkbox-decorator .check::before,
+  label.checkbox-inline.checkbox-#{$key} input[type=checkbox]:checked+.checkbox-decorator .check::before {
+    color: $value;
+  }
+}

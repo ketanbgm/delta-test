@@ -1,0 +1,6 @@
+@import "../variables";
+
+.highlighted {
+  background-color: map-get($bootstrap-colors, "warning");
+  color: #fff;
+}

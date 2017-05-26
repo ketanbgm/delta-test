@@ -1,0 +1,41 @@
+<!-- documentation/layout -->
+<div class="row">
+    <div class="col">
+        <div class="widget">
+            <div class="row">
+                <div class="col">
+                    <div class="title">Layout</div>
+                    <div class="description">Frequently asked questions</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <ol class="questions">
+                        <li>
+                            <p> How do I change the page layout? </p>
+                            <p>Every page has a <code>data-layout</code> attribute in the <code>&lt;body&gt;</code> tag. If you want to change the layout you need to change this attribute. </p>
+                            <ul>
+                                <li><code>default-sidebar-1</code></li>
+                            </ul>
+                            <p>For demo purposes, the layout is also set with javascript in the <code>scripts/app.js</code> file in the following lines: </p>
+                            <pre>
+<code>$('body').attr('data-background', config.background);
+$('body').attr('data-navbar', config.navbar);
+$('body').attr('data-sidebar', config.sidebar);
+$('html').attr('class', 'loading')</code></pre>
+                            <p>Make sure you remove or comment this lines when you build your files for production.</p>
+                            <p>Also the <code>index.html</code> and the views inside the <code>pages</code> folders use the following layouts:</p>
+                            <ul>
+                                <li><code>empty-view-1</code></li>
+                            </ul>
+                            <p>The style for each layout is defined in the <code>styles/layouts</code> folder using the following naming convention: </p>
+                            <p>For example, for the <code>default-sidebar-1</code>, the <code>.scss</code> file is located at <code>styles/layouts/default-sidebar-1.scss</code> and will get compiled to <code>css/layouts/default-sidebar-1.css</code>. The
+                                colors for this layout are defined in the <code>styles/palettes</code> folder.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end documentation/layout -->

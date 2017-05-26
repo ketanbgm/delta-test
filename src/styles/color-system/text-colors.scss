@@ -1,0 +1,16 @@
+@import "../variables";
+$colors: map-merge(map-merge($colors, $bootstrap-colors), $social-media-colors);
+
+@each $key, $value in $colors {
+  .color-#{$key} {
+    color: $value !important;
+  }
+
+  .color-hover-#{$key} {
+    &:hover,
+    &:active,
+    &:focus {
+      color: $value !important;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+@import "../variables";
+@import "../mixins";
+
+[data-layout="default-sidebar-5"] {
+  .navbar {
+    z-index: $zindex-navbar-fixed + 1;
+    width: calc(100% - $left-sidebar-width);
+    position: absolute;
+    top: 0;
+    left: $left-sidebar-width;
+    right: 0;
+    padding-left: $side-margin;
+    padding-right: $side-margin;
+
+    .toggle-layout {
+      i {
+        transition: transform 0.3s ease;
+        display: inline-block;
+        transform: rotate(540deg);
+      }
+    }
+  }
+
+  &[data-collapsed="true"] {
+    .navbar {
+      left: 0;
+      width: calc(100% - $left-sidebar-collapsed-width);
+      z-index: $zindex-navbar-fixed + 2;
+      left: $left-sidebar-collapsed-width;
+
+      .toggle-layout {
+        i {
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+
+  .main {
+    padding-top: $navbar-height + $side-margin;
+    padding-left: $left-sidebar-width + $side-margin;
+    padding-right: $side-margin;
+
+    .jumbotron {
+      width: 100%;
+      margin-bottom: $side-margin;
+    }
+  }
+
+  &[data-collapsed="true"] {
+    .main {
+      padding-left: $side-margin + $left-sidebar-collapsed-width;
+    }
+  }
+
+  .left-sidebar-placeholder {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: calc(100%);
+    width: $left-sidebar-width;
+    z-index: $zindex-navbar-fixed + 2;
+
+    //@include box-shadow-3;
+  }
+
+  &[data-collapsed="true"] {
+    .left-sidebar-placeholder {
+      width: $left-sidebar-collapsed-width;
+    }
+  }
+
+  .left-sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: calc(100%);
+    width: $left-sidebar-width;
+    z-index: $zindex-navbar-fixed + 3;
+
+    .wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      height: calc(100%);
+      width: $left-sidebar-width;
+
+      .content {
+        height: calc(100%);
+        width: $left-sidebar-width;
+      }
+    }
+  }
+
+  &[data-collapsed="true"] {
+    .left-sidebar {
+      width: $left-sidebar-collapsed-width;
+      height: calc(100%);
+
+      .wrapper {
+        width: $left-sidebar-collapsed-width;
+        height: calc(100%);
+
+        .content {
+          width: $left-sidebar-collapsed-width;
+          height: calc(100%);
+        }
+      }
+    }
+  }
+}

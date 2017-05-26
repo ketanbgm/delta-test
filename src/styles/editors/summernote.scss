@@ -1,0 +1,55 @@
+@import "../variables";
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .ta-editor {
+      background-color: map-get($value, "background-color");
+      border-color: map-get($value, "border-color");
+      color: map-get($value, "color");
+    }
+
+    .note-editor {
+      &.note-frame {
+        border-color: map-get($value, "border-color");
+      }
+    }
+
+    .note-editor.note-frame .note-statusbar {
+      background-color: map-get($value, "background-color");
+    }
+
+    .note-toolbar {
+      .btn.btn-default {
+        background-color: map-get($value, "background-color");
+        border-color: map-get($value, "border-color");
+        color: map-get($value, "color");
+      }
+    }
+
+    .note-editor.note-frame .note-editing-area .note-editable {
+      background-color: map-get($value, "background-color");
+      border-color: map-get($value, "border-color");
+      color: map-get($value, "color");
+    }
+
+    .note-btn-group {
+      .dropdown-menu {
+        background: map-get($value, "odd-color");
+
+        .dropdown-item {
+          border-top: 1px solid map-get($value, "border-color");
+          border-left: 1px solid map-get($value, "border-color");
+          border-right: 1px solid map-get($value, "border-color");
+
+          &:last-child {
+            border-bottom: 1px solid map-get($value, "border-color");
+          }
+
+          &:hover {
+            background: map-get($value, "background-color");
+          }
+        }
+      }
+    }
+  }
+}

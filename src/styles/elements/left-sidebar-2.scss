@@ -1,0 +1,231 @@
+@import "../variables";
+@import "../mixins";
+@import "left-sidebar";
+
+.left-sidebar {
+  &.left-sidebar-2 {
+    .section-title {
+      [data-collapsed="true"] & {
+        display: none;
+      }
+    }
+
+    .btn-sidebar-1 {
+      position: relative;
+      text-transform: capitalize;
+
+      &.has-children {
+        &:before {
+          font-family: 'simple-line-icons';
+          content: "\e606";
+          position: absolute;
+          top: 17px;
+          right: $side-margin;
+          font-size: 10px;
+          transition: transform 0.3s ease;
+
+          [data-collapsed="true"] & {
+            display: none;
+          }
+        }
+      }
+
+      [data-collapsed="true"] & {
+        height: 60px;
+        justify-content: center;
+        flex-direction: column;
+        width: $left-sidebar-collapsed-width;
+
+        .separator {
+          display: none;
+        }
+      }
+
+      i {
+        [data-collapsed="true"] & {
+          margin: 0;
+          @include font-size(18px);
+        }
+      }
+
+      .title {
+        [data-collapsed="true"] & {
+          display: none;
+        }
+      }
+
+      .badge {
+        display: none;
+
+        [data-collapsed="true"] & {
+          position: absolute;
+          top: 5px;
+          right: 5px;
+        }
+
+        &.badge-pill {
+          [data-collapsed="true"] & {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .btn-sidebar-2 {
+      text-transform: capitalize;
+    }
+
+    .section {
+      .section-title {
+        //font-weight: 700;
+      }
+
+      ul {
+        > li {
+          position: relative;
+
+          > ul {
+            //display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            z-index: $zindex-navbar-fixed + 3;
+            width: $left-sidebar-width;
+            pointer-events: none;
+            opacity: 0;
+
+            > li {
+              i {
+                visibility: hidden;
+                display: none;
+              }
+            }
+          }
+
+          &:hover {
+            > ul {
+              //display: block;
+              @include box-shadow;
+              pointer-events: auto;
+              opacity: 1;
+              width: 400px;
+              display: flex;
+              flex-wrap: wrap;
+              flex-direction: row;
+              justify-content: flex-start;
+
+              > li {
+                width: 200px;
+                flex: 0 0 200px;
+              }
+            }
+          }
+        }
+      }
+
+      [data-collapsed="true"] & {
+        .collapse,
+        .collapse.show,
+        .collapsing {
+          transition: none !important;
+        }
+      }
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-sidebar="#{$key}"] {
+    .left-sidebar-placeholder {
+      background: map-get($value, "background-color");
+      color: map-get($value, "color");
+    }
+
+    .left-sidebar {
+      &.left-sidebar-2 {
+        background: map-get($value, "background-color");
+        color: map-get($value, "color");
+
+        .section > ul > li:hover > .btn-default.btn-flat.btn-sidebar {
+          //background: map-get($value, "highlight-color") !important;
+          //color: #fff !important;
+          background: map-get($value, "background-color");
+          color: map-get($value, "color");
+          @include sideline(4px, map-get($value, "highlight-color"));
+
+          &:hover {
+            background: map-get($value, "background-color") !important;
+            color: map-get($value, "color") !important;
+            @include sideline(4px, map-get($value, "highlight-color")) i {
+              color: map-get($value, "color") !important;
+            }
+          }
+        }
+
+        .section > ul > li:hover > ul {
+          background: map-get($value, "background-color") !important;
+          color: map-get($value, "color") !important;
+        }
+
+        .btn-default.btn-flat.btn-sidebar {
+          background: map-get($value, "background-color") !important;
+          color: map-get($value, "color") !important;
+          transition: none !important;
+
+          //          &:active, &:focus, &:visited, &.focus {
+          //            background: map-get($value, "background-color") !important;
+          //            color: map-get($value, "color") !important;
+          //          }
+
+          &:hover {
+            //background: map-get($value, "background-color") !important;
+            //color: map-get($value, "color") !important;
+            @include sideline(4px, map-get($value, "highlight-color")) i {
+              //color: #fff !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  @if ($key != 'light') {
+    [data-background="#{$key}"][data-sidebar="#{$key}"] {
+      .left-sidebar-placeholder {
+        background: map-get($value, "even-color");
+      }
+
+      .left-sidebar {
+        &.left-sidebar-2 {
+          background: map-get($value, "even-color");
+
+          .section > ul > li:hover > .btn-default.btn-flat.btn-sidebar {
+            background: map-get($value, "even-color");
+
+            &:hover {
+              background: map-get($value, "even-color") !important;
+            }
+          }
+
+          .section > ul > li:hover > ul {
+            background: map-get($value, "even-color") !important;
+          }
+
+          .btn-default.btn-flat.btn-sidebar {
+            background: map-get($value, "even-color") !important;
+
+            &:active,
+            &:focus,
+            &:visited,
+            &.focus {
+              background: map-get($value, "even-color") !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

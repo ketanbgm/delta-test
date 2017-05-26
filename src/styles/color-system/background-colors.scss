@@ -1,0 +1,52 @@
+@import "../variables";
+@import "../mixins";
+
+.material-design-colors {
+  width: 100%;
+  min-height: 600px;
+
+  .color-example {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 40px;
+
+    span {
+      @include text-xs;
+    }
+  }
+
+  .border-color-example {
+    p {
+      display: block;
+      border-width: 3px;
+      border-style: solid;
+      padding: 10px;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+  }
+}
+
+.no-bg,
+.bg-transparent {
+  background-color: transparent !important;
+}
+$colors: map-merge(map-merge($colors, $bootstrap-colors), $social-media-colors);
+
+@each $key, $value in $colors {
+  .bg-#{$key} {
+    background-color: $value !important;
+  }
+
+  .bg-hover-#{$key} {
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $value !important;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@import "../variables";
+
+@each $key, $value in $bootstrap-colors {
+  .radio.radio-#{$key} label input[type=radio]:checked ~ .bmd-radio-inner-circle,
+  label.radio-inline.radio-#{$key} input[type=radio]:checked ~ .bmd-radio-inner-circle {
+    background-color: $value;
+  }
+
+  .radio.radio-#{$key} label input[type=radio]:checked ~ .bmd-radio-outer-circle,
+  label.radio-inline.radio-#{$key} input[type=radio]:checked ~ .bmd-radio-outer-circle {
+    border-color: $value;
+  }
+}

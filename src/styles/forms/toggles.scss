@@ -1,0 +1,19 @@
+@import "../variables";
+
+.switch {
+  @each $key, $value in $bootstrap-colors {
+    &.switch-#{$key} {
+      label .bmd-switch-track {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0.26) 50%, $value 50%, $value 100%);
+      }
+
+      label input:checked + .bmd-switch-track::after {
+        background-color: $value;
+      }
+
+      label .bmd-switch-track {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0.26) 50%, lighten($value, 33) 50%, lighten($value, 33) 100%);
+      }
+    }
+  }
+}

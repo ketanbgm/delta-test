@@ -1,0 +1,60 @@
+//@import "../variables";
+//@import "../mixins";
+//
+//[data-layout="top-navigation-5"] {
+//  .navbar {
+//    z-index: $zindex-navbar-fixed + 1;
+//    width: calc(100%);
+//    position: absolute;
+//    top: 0;
+//    left: 0;
+//    right: 0;
+//    padding-left: $side-margin;
+//    padding-right: $side-margin;
+//
+//    //@include box-shadow;
+//
+//    .toggle-layout {
+//      display: none;
+//
+//      i {
+//        transition: transform 0.3s ease;
+//        display: inline-block;
+//        transform: rotate(540deg);
+//      }
+//    }
+//  }
+//
+//  &[data-collapsed="true"] {
+//    .navbar {
+//    }
+//  }
+//
+//  .top-navigation {
+//    position: absolute;
+//    top: $navbar-height;
+//    left: 0;
+//    right: 0;
+//    width: calc(100%);
+//    padding-left: $side-margin;
+//    padding-right: $side-margin;
+//  }
+//
+//  .main {
+//    padding-top: $top-navigation-height;
+//    padding-left: $side-margin;
+//    padding-right: $side-margin;
+//
+//    .jumbotron {
+//      width: 100%;
+//      margin-top: $navbar-height + $side-margin;
+//      margin-bottom: $side-margin;
+//    }
+//  }
+//
+//  &[data-collapsed="true"] {
+//    .main {
+//      padding-left: $side-margin + $left-sidebar-collapsed-width;
+//    }
+//  }
+//}

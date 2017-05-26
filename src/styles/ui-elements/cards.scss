@@ -1,0 +1,85 @@
+@import "../variables";
+@import "../bootstrap/scss/mixins/image";
+
+.card {
+  font-size: 14px;
+
+  .card-img,
+  .card-img-top {
+    @include img-fluid;
+  }
+
+  .card-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .card-text {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .card-actions {
+    padding: 10px 0;
+  }
+
+  &.card-badges-left {
+    position: relative;
+
+    .card-badges {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+
+      > .badge {
+        float: left;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  &.card-badges-right {
+    position: relative;
+
+    .card-badges {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+
+      > .badge {
+        float: right;
+        margin-left: 5px;
+      }
+    }
+  }
+
+  .card-block {
+    &.with-icon {
+      i {
+        font-size: 22px;
+        float: left;
+        margin: 12px 20px 10px 0;
+      }
+    }
+
+    &.with-avatar {
+      .avatar {
+        font-size: 22px;
+        float: left;
+        margin: 2px 20px 10px 0;
+      }
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .card {
+      background: map-get($value, "background-color");
+      color: map-get($value, "color");
+      border-color: map-get($value, "border-color");
+    }
+  }
+}

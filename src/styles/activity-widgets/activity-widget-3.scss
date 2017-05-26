@@ -1,0 +1,49 @@
+@import "../variables";
+@import "../mixins";
+
+.activity-widget-3 {
+  .media {
+    padding: 20px;
+  }
+
+  .rounded-circle {
+    height: 40px;
+    width: 40px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #fff;
+
+    @include box-shadow;
+    margin-right: 20px;
+  }
+
+  h4 {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+
+  p {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .activity-widget-3 {
+      .media {
+        &:nth-child(odd) {
+          background-color: map-get($value, "odd-color");
+        }
+
+        &:nth-child(even) {
+          background-color: map-get($value, "background-color");
+        }
+      }
+    }
+  }
+}

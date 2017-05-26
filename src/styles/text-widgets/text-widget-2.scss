@@ -1,0 +1,28 @@
+.text-widget-2 {
+  position: relative;
+  padding: 15px;
+
+  .row {
+    margin: 0;
+    padding: 0;
+
+    .col {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .title {
+    font-size: 0.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+    font-weight: 700;
+
+    .percent {
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+  }
+}

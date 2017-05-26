@@ -1,0 +1,41 @@
+//@import "../variables";
+//@import "../mixins";
+//
+//[data-layout="top-navigation-3"] {
+//  .navbar {
+//    z-index: $zindex-navbar-fixed + 1;
+//    width: calc(100%);
+//    position: absolute;
+//    top: 0;
+//    left: 0;
+//    right: 0;
+//    padding-left: $side-margin;
+//    padding-right: $side-margin;
+//  }
+//
+//  .jumbotron {
+//    position: absolute;
+//    top: $navbar-height;
+//    left: 0;
+//    right: 0;
+//    width: calc(100%);
+//    height: $top-navigation-3-jumbotron-height + $top-navigation-3-height;
+//    display: block;
+//  }
+//
+//  .top-navigation {
+//    position: absolute;
+//    top: $navbar-height + $top-navigation-3-jumbotron-height;
+//    left: 0;
+//    right: 0;
+//    width: calc(100%);
+//    padding-left: $side-margin;
+//    padding-right: $side-margin;
+//  }
+//
+//  .main {
+//    padding-top: $navbar-height + $side-margin;
+//    padding-left: $side-margin;
+//    padding-right: $side-margin;
+//  }
+//}

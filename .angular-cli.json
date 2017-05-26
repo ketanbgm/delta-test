@@ -1,0 +1,194 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "delta-angular"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "fonts",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "../bower_components/fullcalendar/dist/fullcalendar.min.css",
+        "../bower_components/fakeLoader/fakeLoader.css",
+        "../bower_components/PACE/themes/blue/pace-theme-minimal.css",
+        "../bower_components/sweetalert2/dist/sweetalert2.css",
+        "../bower_components/nouislider/distribute/nouislider.min.css",
+        "../bower_components/chartist/dist/chartist.min.css",
+        "../bower_components/nvd3/build/nv.d3.min.css",
+        "../bower_components/morris.js/morris.css",
+        "styles/main.scss",
+        "styles/area-chart-widgets/area-chart-widget-1.scss",
+        "styles/text-widgets/text-widget-1.scss",
+        "styles/timeline-widgets/timeline-widget-1.scss",
+        "styles/activity-widgets/activity-widget-1.scss",
+        "styles/finance-widgets/finance-widget-1.scss",
+        "styles/table-widgets/table-widget-1.scss",
+        "styles/table-widgets/table-widget-2.scss",
+        "styles/table-widgets/table-widget-4.scss",
+        "styles/layouts/off-canvas-1.scss",
+        "styles/layouts/default-sidebar-1.scss",
+        "styles/elements/left-sidebar-1.scss",
+        "styles/elements/navbar-1.scss",
+        "styles/layouts/collapsed-sidebar-1.scss",
+        "styles/elements/collapsed-left-sidebar-1.scss",
+        "styles/elements/collapsed-sidebar-heading-1.scss",
+        "styles/layouts/top-navigation-1.scss",
+        "styles/elements/top-navigation-1.scss",
+        "styles/layouts/top-navigation-2.scss",
+        "styles/elements/top-navigation-2.scss",
+        "styles/layouts/empty-view-1.scss",
+        "styles/elements/widget.scss",
+        "styles/elements/backdrops.scss",
+        "styles/elements/sidebar-heading-1.scss",
+        "styles/elements/sidebar-widget-1.scss",
+        "styles/elements/sidebar-widget-2.scss",
+        "styles/elements/logo.scss",
+        "styles/elements/dropdown-grid.scss",
+        "styles/elements/dropdown-tasks.scss",
+        "styles/elements/dropdown-messages.scss",
+        "styles/elements/dropdown-flags.scss",
+        "styles/elements/dropdown-user.scss",
+        "styles/elements/right-sidebar.scss",
+        "styles/elements/jumbotron-1.scss",
+        "styles/elements/jumbotron-2.scss",
+        "styles/dashboards/dashboard.scss",
+        "styles/apps/calendar.scss",
+        "styles/ui-elements/buttons.scss",
+        "styles/ui-elements/images.scss",
+        "styles/ui-elements/lists.scss",
+        "styles/ui-elements/typography.scss",
+        "styles/ui-elements/social-media-buttons.scss",
+        "styles/ui-elements/badges.scss",
+        "styles/ui-elements/progress-bars.scss",
+        "styles/ui-elements/tabs.scss",
+        "styles/ui-elements/breadcrumbs.scss",
+        "styles/ui-elements/dropdowns.scss",
+        "styles/ui-elements/pagination.scss",
+        "styles/notifications/tooltips.scss",
+        "styles/notifications/popovers.scss",
+        "styles/notifications/modals.scss",
+        "styles/notifications/alerts.scss",
+        "styles/notifications/sweet-alert-2.scss",
+        "styles/notifications/toastr.scss",
+        "styles/icons/font-awesome.scss",
+        "styles/icons/flags.scss",
+        "styles/icons/material-design-icons.scss",
+        "styles/icons/weather-icons.scss",
+        "styles/icons/simple-line-icons.scss",
+        "styles/icons/ionicons.scss",
+        "styles/forms/default-forms.scss",
+        "styles/forms/file-uploads.scss",
+        "styles/forms/sliders.scss",
+        "styles/tables/default-tables.scss",
+        "styles/tables/datatable.scss",
+        "styles/tables/jquery-treegrid.scss",
+        "styles/charts/peity.scss",
+        "styles/charts/chartist.scss",
+        "styles/charts/nvd3.scss",
+        "styles/charts/easy-pie-chart.scss",
+        "styles/charts/morris-js.scss",
+        "styles/pages/user-profile.scss",
+        "styles/documentation/code-structure.scss",
+        "styles/documentation/customization.scss",
+        "styles/documentation/layout.scss",
+        "styles/documentation/styles.scss",
+        "styles/documentation/credits.scss",
+        "styles/maps/google-maps.scss",
+        "styles/maps/vector-maps.scss",
+        "styles/pages/coming-soon.scss",
+        "styles/pages/contact-us.scss",
+        "styles/pages/create-account.scss",
+        "styles/pages/error-page.scss",
+        "styles/pages/login.scss",
+        "styles/pages/reset-password.scss",
+        "styles/pages/subscribe.scss",
+        "styles/pages/under-maintenance.scss",
+        "styles/pages/unlock-account.scss"
+      ],
+      "stylePreprocessorOptions": {
+        "includePaths": [
+          "styles"
+        ]
+      },
+      "scripts": [
+        "../bower_components/jquery-1.9.1/index.js",
+        "../bower_components/tether/dist/js/tether.min.js",
+        "../bower_components/bootstrap/dist/js/bootstrap.min.js",
+        "../bower_components/lodash/dist/lodash.min.js",
+        "../bower_components/js-storage/js.storage.min.js",
+        "../bower_components/mousetrap/mousetrap.js",
+        "../bower_components/d3/d3.js",
+        "../bower_components/moment/moment.js",
+        "../bower_components/fakeLoader/fakeLoader.min.js",
+        "../bower_components/jquery-fullscreen/jquery.fullscreen-min.js",
+        "../bower_components/PACE/pace.min.js",
+        "../bower_components/fullcalendar/dist/fullcalendar.min.js",
+        "../bower_components/sweetalert2/dist/sweetalert2.min.js",
+        "../bower_components/dropzone/dist/min/dropzone.min.js",
+        "../bower_components/approvejs/dist/approve.min.js",
+        "../bower_components/nouislider/distribute/nouislider.min.js",
+        "../bower_components/datatables/media/js/jquery.dataTables.min.js",
+        "../bower_components/datatables/media/js/dataTables.bootstrap4.min.js",
+        "../bower_components/table-export/tableExport.js",
+        "../bower_components/table-export/jquery.base64.js",
+        "../bower_components/table-export/jspdf/libs/sprintf.js",
+        "../bower_components/table-export/jspdf/jspdf.js",
+        "../bower_components/table-export/jspdf/libs/base64.js",
+        "../bower_components/jquery-treegrid/js/jquery.treegrid.min.js",
+        "../bower_components/peity/jquery.peity.min.js",
+        "../bower_components/chartist/dist/chartist.min.js",
+        "../bower_components/nvd3/build/nv.d3.min.js",
+        "../bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js",
+        "../bower_components/raphael/raphael.min.js",
+        "../bower_components/morris.js/morris.min.js",
+        "../bower_components/topojson/topojson.min.js",
+        "../bower_components/datamaps/dist/datamaps.all.min.js",
+        "../bower_components/accounting.js/accounting.min.js",
+        "../bower_components/jquery.countdown/dist/jquery.countdown.min.js",
+        "../bower_components/toastr/toastr.min.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json"
+    },
+    {
+      "project": "src/tsconfig.spec.json"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "scss",
+    "component": []
+  }
+}

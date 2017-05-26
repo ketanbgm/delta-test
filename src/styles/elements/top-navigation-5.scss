@@ -1,0 +1,125 @@
+//@import "../variables";
+//@import "../palettes/top-navigation";
+//@import "../mixins";
+//@import "top-navigation";
+//
+//.top-navigation {
+//  &.top-navigation-5 {
+//    //border-bottom-width: 1px;
+//    //border-bottom-style: solid;
+//    > ul {
+//      > li {
+//        > a {
+//          height: $top-navigation-5-height;
+//          line-height: $top-navigation-5-height;
+//        }
+//
+//        > ul {
+//          li {
+//            height: $top-navigation-5-dropdown-height;
+//            line-height: $top-navigation-5-dropdown-height;
+//
+//            a {
+//              height: $top-navigation-5-dropdown-height;
+//              line-height: $top-navigation-5-dropdown-height;
+//            }
+//          }
+//        }
+//      }
+//    }
+//  }
+//}
+//
+//.top-navigation {
+//  &.top-navigation-5 {
+//    > ul {
+//      > li {
+//        > a {
+//          i {
+//            margin-right: 8px;
+//          }
+//
+//          .badge {
+//            display: none;
+//          }
+//        }
+//      }
+//    }
+//  }
+//}
+//
+//@each $key, $value in $top-navigation-palettes {
+//  [data-top-navigation="#{$key}"] {
+//    .top-navigation {
+//      &.top-navigation-5 {
+//        background: map-get($value, 'background-color');
+//        //border-top-color: map-get($value, 'border-top-color');
+//        //border-bottom-color: map-get($value, 'border-bottom-color');
+//        color: map-get($value, 'color');
+//        //@include box-shadow();
+//        a {
+//          color: map-get($value, 'color');
+//        }
+//
+//        .menu-bottom {
+//          background: map-get($value, 'background-color');
+//          border-color: map-get($value, 'border-color');
+//
+//          .level-1 {
+//            &:before {
+//              border-left: 7px solid transparent;
+//              border-right: 7px solid transparent;
+//              border-bottom: 7px solid map-get($value, 'highlight-color');
+//            }
+//
+//            &:hover {
+//              &:before {
+//              }
+//            }
+//          }
+//
+//          > li {
+//            &:hover {
+//              //background: map-get($value, 'highlight-color');
+//              //color: map-get($value, 'highlight-color');
+//              > a {
+//                //background: map-get($value, 'highlight-color');
+//                //color: map-get($value, 'highlight-color');
+//              }
+//            }
+//
+//            > ul {
+//              @include box-shadow();
+//
+//              > li {
+//                &:hover {
+//                  background: map-get($value, 'highlight-color');
+//                  //color: map-get($value, 'highlight-color');
+//                  > a {
+//                    background: map-get($value, 'highlight-color');
+//                    color: map-get($value, 'highlight-text-color');
+//                  }
+//                }
+//
+//                > ul {
+//                  > li {
+//                    &:hover {
+//                      background: map-get($value, 'highlight-color');
+//                      //color: map-get($value, 'highlight-color');
+//                      > a {
+//                        background: map-get($value, 'highlight-color');
+//                        color: map-get($value, 'highlight-text-color');
+//                        //color: map-get($value, 'highlight-color');
+//                      }
+//                    }
+//                  }
+//                }
+//              }
+//            }
+//          }
+//        }
+//      }
+//    }
+//  }
+//}
+//

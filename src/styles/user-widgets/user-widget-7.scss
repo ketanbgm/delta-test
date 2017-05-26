@@ -1,0 +1,58 @@
+@import "../variables";
+@import "../mixins";
+
+.user-widget-7 {
+  height: 160px;
+  width: 100%;
+  position: relative;
+
+  //@include box-shadow();
+  &:before {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80px;
+    width: 100%;
+    background-image: url(https://unsplash.it/600/200?image=471&gravity=center);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &:after {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80px;
+    width: 100%;
+    background: map-get($bootstrap-colors, "warning");
+    opacity: 0.75;
+  }
+
+  .row {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .rounded-circle {
+    border: 3px solid #fff;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    z-index: 2;
+
+    @include box-shadow;
+  }
+}

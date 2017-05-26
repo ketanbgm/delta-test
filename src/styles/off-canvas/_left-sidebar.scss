@@ -1,0 +1,40 @@
+@import "../variables";
+
+$icon-width: 40px;
+
+.left-sidebar {
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .section-title {
+    display: flex;
+    height: 50px;
+    margin-left: 25px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-transform: uppercase;
+  }
+
+  .btn-sidebar {
+    display: flex;
+    height: 50px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative;
+		border: none;
+
+    i {
+      width: $icon-width;
+      margin-right: 10px;
+
+      @include font-size(16px);
+    }
+  }
+}
+

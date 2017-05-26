@@ -1,0 +1,192 @@
+@import "../variables";
+@import "../mixins";
+@import "left-sidebar";
+
+.left-sidebar {
+  &.left-sidebar-4 {
+    .section-title {
+      [data-collapsed="true"] & {
+        display: none;
+      }
+    }
+
+    .btn-sidebar-1 {
+      position: relative;
+      text-transform: capitalize;
+
+      &.has-children {
+        &:before {
+          font-family: 'simple-line-icons';
+          content: "\e606";
+          position: absolute;
+          top: 18px;
+          right: $side-margin;
+          font-size: 10px;
+          transition: transform 0.3s ease;
+          transform: rotate(-720deg);
+        }
+
+        &[aria-expanded="true"] {
+          &:before {
+            transform: rotate(90deg);
+          }
+        }
+      }
+
+      [data-collapsed="true"] & {
+        height: 70px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap;
+        width: $left-sidebar-collapsed-width;
+
+        &.has-children {
+          &:before {
+            display: none;
+          }
+        }
+
+        .separator {
+          display: none;
+        }
+      }
+
+      i {
+        [data-collapsed="true"] & {
+          width: $left-sidebar-collapsed-width;
+          height: 35px;
+          margin: 7px 0 0 0;
+        }
+      }
+
+      .title {
+        [data-collapsed="true"] & {
+          width: $left-sidebar-collapsed-width;
+          font-size: 10px;
+          height: 35px;
+          margin: 0;
+        }
+      }
+
+      .badge {
+        display: none;
+
+        [data-collapsed="true"] & {
+          position: absolute;
+          top: 5px;
+          right: 5px;
+
+          //display: none;
+        }
+
+        &.badge-pill {
+          [data-collapsed="true"] & {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .btn-sidebar-2 {
+      text-transform: capitalize;
+    }
+
+    .section {
+      ul {
+        > li {
+          position: relative;
+
+          > ul {
+            > li {
+              i {
+                visibility: hidden;
+              }
+            }
+          }
+
+          &:hover {
+            > ul {
+              > li {
+              }
+            }
+          }
+        }
+      }
+
+      [data-collapsed="true"] & {
+        ul {
+          > li {
+            position: relative;
+
+            > ul {
+              //display: none;
+              position: absolute;
+              top: 0;
+              left: 100%;
+              z-index: $zindex-navbar-fixed + 3;
+              width: $left-sidebar-width;
+              pointer-events: none;
+              opacity: 0;
+
+              > li {
+                i {
+                  visibility: hidden;
+                  display: none;
+                }
+              }
+            }
+
+            &:hover {
+              > ul {
+                display: block;
+
+                @include box-shadow;
+                pointer-events: auto;
+                opacity: 1;
+
+                > li {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-sidebar="#{$key}"] {
+    .left-sidebar {
+      &.left-sidebar-4 {
+        background: map-get($value, "background-color");
+        color: map-get($value, "color");
+
+        .section > ul > li:hover > .btn-default.btn-flat.btn-sidebar {
+          background: map-get($value, "highlight-color") !important;
+          color: #fff !important;
+        }
+
+        .btn-default.btn-flat.btn-sidebar {
+          background: map-get($value, "background-color") !important;
+          color: map-get($value, "color") !important;
+          transition: none !important;
+
+          &:active,
+          &:focus,
+          &:visited,
+          &.focus {
+            background: map-get($value, "background-color") !important;
+            color: map-get($value, "color") !important;
+          }
+
+          &[data-toggle="collapse"][aria-expanded="true"] {
+            background: map-get($value, "highlight-color") !important;
+            color: #fff !important;
+          }
+        }
+      }
+    }
+  }
+}

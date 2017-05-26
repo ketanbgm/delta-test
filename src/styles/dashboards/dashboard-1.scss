@@ -1,0 +1,36 @@
+@import "../variables";
+
+[data-controller="dashboards"][data-view="dashboard-1"] {
+  #bar-chart-3 {
+    height: 280px;
+  }
+
+  .widget-1 {
+    position: relative;
+
+    .title {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .subtitle {
+      font-weight: 500;
+      font-size: 0.85rem;
+    }
+
+    .numbers {
+      text-align: right;
+      position: absolute;
+      top: 0;
+      right: 10px;
+
+      .price {
+        font-size: 1.3rem;
+      }
+
+      .value {
+        font-size: 0.85rem;
+      }
+    }
+  }
+}

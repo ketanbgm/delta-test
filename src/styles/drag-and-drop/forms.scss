@@ -1,0 +1,9 @@
+@import "../variables";
+@import "../palettes";
+
+#draggable-form {
+  .gu-transit {
+    padding: 10px;
+    border: 2px dashed map-get($bootstrap-colors, "warning");
+  }
+}

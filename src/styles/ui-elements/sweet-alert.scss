@@ -1,0 +1,32 @@
+@import "../variables";
+@import "../mixins";
+
+.sweet-overlay {
+  z-index: $zindex-modal !important;
+}
+
+.sweet-alert {
+  @include box-shadow;
+  background: #fff;
+  color: map-get($colors, "grey-900");
+  border-color: #fff;
+
+  h2 {
+    color: map-get($bootstrap-colors, "primary");
+  }
+
+  p {
+    color: map-get($colors, "grey-900");
+  }
+
+  button {
+    @include box-shadow;
+  }
+
+  .icon {
+    .fix,
+    &:before,
+    &:after {
+    }
+  }
+}

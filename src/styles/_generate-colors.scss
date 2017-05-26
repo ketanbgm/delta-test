@@ -1,0 +1,8 @@
+@import "colors";
+@import "palettes";
+
+colors {
+	@each $key, $value in $bootstrap-colors {
+		#{$key}: #{$value};
+	}
+}

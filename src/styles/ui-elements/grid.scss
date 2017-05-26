@@ -1,0 +1,56 @@
+@import "../variables";
+
+.show-grid {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 20px;
+}
+
+.show-grid [class^=col-] {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.show-grid [class^=col-]:nth-child(odd) {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 500;
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .show-grid [class^=col-] {
+      color: #fff;
+      background-color: map-get($value, "highlight-color");
+    }
+
+    .show-grid [class^=col-]:nth-child(odd) {
+      color: #fff;
+      background-color: lighten(map-get($value, "highlight-color"), 5%);
+    }
+
+    .vertical-alignment-example {
+      .show-grid {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .container {
+        background-color: map-get($value, "border-color");
+      }
+
+      .row {
+        min-height: 6rem;
+
+        .col-xs {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

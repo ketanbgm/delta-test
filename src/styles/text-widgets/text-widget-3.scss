@@ -1,0 +1,23 @@
+.text-widget-3 {
+  position: relative;
+  padding: 15px;
+
+  .row {
+    margin: 0;
+    padding: 0;
+
+    .col {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .title {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+  }
+}

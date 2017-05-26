@@ -1,0 +1,113 @@
+@import "../variables";
+@import "../mixins";
+
+.banners {
+  position: relative;
+
+  .icon-512 {
+    height: 512px;
+    width: 512px;
+    text-align: center;
+    font-size: 450px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    height: 512px;
+    width: 512px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: map-get($bootstrap-colors, "primary");
+    color: #fff;
+  }
+
+  .icon {
+    height: 80px;
+    width: 80px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: map-get($bootstrap-colors, "primary");
+    color: #fff;
+
+    .fa {
+      color: #fff;
+      font-size: 44px;
+      margin-top: 4px;
+    }
+
+    .letter {
+      margin-top: 4px;
+      font-size: 11px;
+    }
+  }
+
+  .banner {
+    width: 590px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    background: map-get($bootstrap-colors, "default");
+    color: #fff;
+
+    .screenshot {
+      position: absolute;
+      top: 90px;
+      left: 180px;
+
+      @include box-shadow;
+    }
+
+    .title {
+      position: absolute;
+      top: 20px;
+      left: 25px;
+      font-size: 15px;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+
+      .fa {
+        margin-right: 5px;
+        color: #fff;
+      }
+    }
+
+    .tagline {
+      font-size: 12px;
+      position: absolute;
+      top: 48px;
+      left: 25px;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+    }
+
+    .description {
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+      font-size: 12px;
+      position: absolute;
+      top: 90px;
+      left: -5px;
+      width: 160px;
+    }
+
+    &:before {
+      position: absolute;
+      content: "";
+      display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 300px;
+      width: 100%;
+      background-image: url(/assets/images/432.jpg);
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0.1;
+    }
+  }
+}

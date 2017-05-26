@@ -1,0 +1,100 @@
+@import "../variables";
+@import "../mixins";
+@import "left-sidebar";
+
+.left-sidebar {
+  &.left-sidebar-7 {
+    .section-title {
+    }
+
+    .btn-sidebar-1 {
+      position: relative;
+      text-transform: capitalize;
+
+      &.has-children {
+        &:before {
+          font-family: 'simple-line-icons';
+          content: "\e606";
+          position: absolute;
+          top: 18px;
+          right: $side-margin;
+          font-size: 10px;
+          transition: transform 0.3s ease;
+          transform: rotate(-720deg);
+        }
+
+        &[aria-expanded="true"] {
+          &:before {
+            transform: rotate(90deg);
+          }
+        }
+      }
+
+      .badge {
+        display: none;
+      }
+    }
+
+    .btn-sidebar-2 {
+      text-transform: capitalize;
+    }
+
+    .section {
+      ul {
+        > li {
+          position: relative;
+
+          > ul {
+            > li {
+              i {
+                visibility: hidden;
+              }
+            }
+          }
+
+          &:hover {
+            > ul {
+              > li {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-sidebar="#{$key}"] {
+    .left-sidebar {
+      &.left-sidebar-7 {
+        background: map-get($value, "background-color");
+        color: map-get($value, "color");
+
+        .section > ul > li:hover > .btn-default.btn-flat.btn-sidebar {
+          background: map-get($value, "highlight-color") !important;
+          color: #fff !important;
+        }
+
+        .btn-default.btn-flat.btn-sidebar {
+          background: map-get($value, "background-color") !important;
+          color: map-get($value, "color") !important;
+          transition: none !important;
+
+          &:active,
+          &:focus,
+          &:visited,
+          &.focus {
+            background: map-get($value, "background-color") !important;
+            color: map-get($value, "color") !important;
+          }
+
+          &[data-toggle="collapse"][aria-expanded="true"] {
+            background: map-get($value, "highlight-color") !important;
+            color: #fff !important;
+          }
+        }
+      }
+    }
+  }
+}

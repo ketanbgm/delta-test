@@ -1,0 +1,69 @@
+@import "../variables";
+@import "../palettes";
+
+.animation-delays {
+  code {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+}
+
+.animation-delay-example {
+  display: block;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  color: #fff;
+  text-align: center;
+  float: left;
+  margin: 0 20px 20px 0;
+  font-size: 13px;
+  position: relative;
+  border-radius: 10px;
+
+  &:before {
+    font-family: 'simple-line-icons';
+    content: "\e069";
+    font-size: 32px;
+  }
+}
+
+@for $i from 0 through 50 {
+  .delay-#{$i * 100},
+   {
+    animation-delay: #{$i * 100}ms;
+  }
+}
+
+.delay-fast {
+  @for $i from 1 through 50 {
+    > *:nth-child(#{$i}) {
+      animation-delay: #{$i * 50}ms;
+    }
+  }
+}
+
+.delay,
+.delay-normal {
+  @for $i from 1 through 50 {
+    > *:nth-child(#{$i}) {
+      animation-delay: #{$i * 100}ms;
+    }
+  }
+}
+
+.delay-slow {
+  @for $i from 1 through 50 {
+    > *:nth-child(#{$i}) {
+      animation-delay: #{$i * 200}ms;
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .animation-delay-example {
+      background: map-get($value, "highlight-color");
+    }
+  }
+}

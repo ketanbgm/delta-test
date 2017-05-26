@@ -1,0 +1,110 @@
+@import "../variables";
+@import "navbar";
+
+.navbar {
+  &.navbar-6 {
+    @media (max-width: 543px) {
+      .toggle-layout {
+        display: none;
+      }
+
+      .navbar-search-form {
+        display: none;
+      }
+
+      .navbar-left {
+        display: none;
+      }
+
+      .navbar-right {
+        display: none;
+      }
+    }
+
+    @media (min-width: 544px) and (max-width: 767px) {
+      .toggle-layout {
+        display: none;
+      }
+
+      .navbar-left {
+        display: none;
+      }
+
+      .navbar-search-form {
+        display: none;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+      .toggle-layout {
+        display: none;
+      }
+
+      .navbar-search-form {
+        display: none;
+      }
+
+      .toggle-fullscreen {
+        display: none;
+      }
+    }
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .toggle-layout {
+        display: none;
+      }
+
+      .navbar-search-form {
+        display: none;
+      }
+
+      .navbar-search-form {
+        flex: 0 0 200px;
+      }
+
+      .toggle-fullscreen {
+        display: none;
+      }
+    }
+
+    @media (min-width: 1200px) {
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-navbar="#{$key}"] {
+    .navbar {
+      &.navbar-6 {
+        background: map-get($value, "background-color");
+        color: map-get($value, "color");
+
+        .nav-link {
+          color: map-get($value, "color");
+        }
+
+        .dropdown {
+          .dropdown-item {
+            a {
+              color: map-get($value, "color") !important;
+            }
+          }
+        }
+
+        .input-group {
+          .input-group-addon {
+            color: map-get($value, "color");
+            background-color: map-get($value, "even-color");
+            border-color: map-get($value, "even-color");
+          }
+
+          .form-control {
+            color: map-get($value, "color");
+            background-color: map-get($value, "even-color");
+            border-color: map-get($value, "even-color");
+          }
+        }
+      }
+    }
+  }
+}
